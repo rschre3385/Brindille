@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	
-
 	def index
 	  @posts = Post.paginate(:page => params[:page], :per_page => 9)
 	end
@@ -20,11 +19,11 @@ class PostsController < ApplicationController
 	def create
 	  @post = current_user.posts.build(post_params)
 
-	    if @post.save 
-		  redirect_to @post 
-		else 
-		  render 'new'
-		end 
+	  if @post.save 
+	    redirect_to @post 
+	  else 
+		render 'new'
+	  end 
 	end  
 
 	def edit

@@ -4,7 +4,7 @@
 		= current_user.name
 		%br/
 		%span
-			Share your inspiration and see what'sSha inspiring others.
+			Share your inspiration and see what's inspiring others.
 - else
 	%p#intro
 		Show us how you feel!
@@ -31,8 +31,7 @@
 							%i.fa.fa-thumbs-o-up
 							= post.get_likes.size
 		
-= will_paginate @posts
-
-
+	= will_paginate @posts, :page_links => false 
+	
 
   
